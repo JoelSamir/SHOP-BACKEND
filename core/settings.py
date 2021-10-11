@@ -92,35 +92,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-if 'test' in sys.argv:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'd2hn7b51el578g',
-            'USER': 'iqjnewcvczlubg',
-            'PASSWORD': 'b4f72856d2cf89bb284b2e0f8cd86904557c63c2ffe5dfa39dd4a81a3e447166',
-            'HOST': 'ec2-52-204-213-254.compute-1.amazonaws.com',
-            'PORT': 5432,
-            'TEST': {
-                'NAME': 'd2hn7b51el578g',
-            }
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'd61irh7fkccsl8',
-            'USER': 'ncpsnhdthaqise',
-            'PASSWORD': '5709ec22b802edc443201ea1b730cc6a0a6ba46c4e507d00f29fd25532f9f454',
-            'HOST': 'ec2-107-22-18-26.compute-1.amazonaws.com',
-            'PORT': '5432',
-            'TEST': {
-                'NAME': 'd61irh7fkccsl8',
-            },
-        }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd61irh7fkccsl8',
+        'USER': 'ncpsnhdthaqise',
+        'PASSWORD': '5709ec22b802edc443201ea1b730cc6a0a6ba46c4e507d00f29fd25532f9f454',
+        'HOST': 'ec2-107-22-18-26.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'TEST': {
+            'NAME': 'd61irh7fkccsl8',
+        },
     }
+
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -152,12 +138,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
