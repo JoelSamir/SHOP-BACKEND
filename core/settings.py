@@ -11,11 +11,16 @@ env = environ.Env()
 
 environ.Env.read_env()
 
-DEBUG = False
+DEBUG = True
 SECRET_KEY = env('SECRET_KEY')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 ALLOWED_HOSTS = []
+CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOWED_ORIGINS = [
+#     "https://ecommerce-aacjp-missiontic.herokuapp.com/"
+# ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,12 +64,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
-    'https://localhost:8080',
-
-    # Link de la pagina final (heroku)
-)
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'contenttype',
